@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'CalSans-SemiBold';
+    src: url('/fonts/CalSans-SemiBold.woff') format('woff'), /* Modern Browsers */
+		 url('/fonts/CalSans-SemiBold.woff2') format('woff2'), /* Modern Browsers */
+		 url('/fonts/CalSans-SemiBold.otf') format('opentype'), /* Safari, Android, iOS */
+         url('/fonts/CalSans-SemiBold.ttf') format('truetype'); /* Older Browsers */
+    font-weight: 600; /* You may adjust the font weight as needed */
+    font-style: normal; /* You may adjust the font style as needed */
+}
+
+body {
+    font-family: 'CalSans-SemiBold', sans-serif;
+    /* Replace 'sans-serif' with a fallback font family in case the custom font fails to load */
+}

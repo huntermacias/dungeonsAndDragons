@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combat Tracker</title>
+    <!-- Include Tailwind CSS -->
+    <link href="/dist/output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/combatTracker.css">
+</head>
+
+<body class="bg-[#0F0F0F] leading-normal tracking-normal text-gray-300">
+
+    <!-- Header: Game Status -->
+    <nav class="bg-[#040D12] p-4 text-white shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <img src="assets/dnd_icon.png" alt="Logo" class="h-12 w-12" />
+            </div>
+            <div class="text-sm space-x-4">
+                <span>Turn: <span id="current-turn">--</span></span>
+                <span>Creatures: <span id="creature-count">#</span></span>
+                <span>Round: <span id="game-round">#</span></span>
+                <span>Time Elapsed: <span id="time-elapsed">00:00</span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto pt-8 px-4">
+        <h1 class="text-4xl font-bold text-white mb-8 text-center">Combat Tracker</h1>
+
+        <!-- Creature Form -->
+        <section class="mb-8">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h2 class="text-3xl text-white mb-6 text-center">Add Creature</h2>
+                <form id="creature-form" class="space-y-6">
+                    <input type="text" id="creature-name" placeholder="Creature Name"
+                        class="w-full p-3 rounded bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500" required>
+                    <input type="number" id="creature-initiative" placeholder="Initiative (optional)"
+                        class="w-full p-3 rounded bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500">
+                    <input type="number" id="creature-hp" placeholder="HP (optional)"
+                        class="w-full p-3 rounded bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500">
+                    <input type="number" id="creature-ac" placeholder="Armor Class (optional)"
+                        class="w-full p-3 rounded bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500">
+                    <input type="number" id="creature-quantity" placeholder="Quantity"
+                        class="w-full p-3 rounded bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500" required>
+                    <button type="submit"
+                        class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded focus:outline-none focus:shadow-outline">Add Creature</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Creature List -->
+        <section class="py-12 px-8">
+            <h2 class="text-5xl font-bold text-gray-200 mb-12 text-center">Creatures</h2>
+            <div id="creature-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
+                <!-- Dynamically added creature cards will go here -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer: Navigation Links -->
+    <footer class="bg-[#040D12] text-white p-6 mt-12">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
+                <a href="/pages/categories.html" class="hover:text-indigo-400">Categories</a>
+                <a href="pages/map-generator.html" class="hover:text-indigo-400">Map Generator</a>
+                <a href="#" class="hover:text-indigo-400">Combat Tracker</a>
+                <a href="/pages/statblock-generator.html" class="hover:text-indigo-400">Statblock Generator</a>
+                <a href="/pages/encounter-generator.html" class="hover:text-indigo-400">Encounter Generator</a>
+                <!-- ... other links -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../scripts/combatTracker.js"></script>
+</body>
+
+</html>
