@@ -7,7 +7,42 @@
     <title>Dungeons & Dragons</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Additional styles can go here */
+        /* Custom styles */
+        .navigation-orb {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: solid 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .navigation-link {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .navigation-link:hover {
+            transform: scale(1.1);
+        }
+
+        .navigation-link:hover .link-text {
+            text-decoration: underline;
+        }
+
+        .link-text {
+            transition: color 0.3s ease-in-out;
+        }
+
+        /* Background styles */
+        .hero-section::before {
+            content: '';
+            background: url('./assets/background1.png') no-repeat center center;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0.5;
+            z-index: -1;
+        }
     </style>
 </head>
 
@@ -16,16 +51,39 @@
     <!-- Hero Section -->
     <section class="relative">
         <!-- Background Image -->
-        <img src="/path/to/your/image.png" alt="Dungeons & Dragons" class="w-full h-screen object-cover">
+        <img src="./assets/background1.png" alt="Dungeons & Dragons" class="w-full h-screen object-cover">
         
         <!-- Overlay -->
         <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center">
             <!-- Content -->
             <h1 class="text-6xl font-bold mb-6">Welcome to Dungeons & Dragons</h1>
             <p class="text-xl mb-6">Embark on your adventure</p>
-            <a href="/pages/map-generator.html" class="bg-indigo-600 px-6 py-3 rounded-full text-xl hover:bg-indigo-700 transition">Start Your Journey</a>
+            <a href="pages/map-generator.html" class="bg-indigo-600 px-6 py-3 rounded-full text-xl hover:bg-indigo-700 transition">Start Your Journey</a>
+			 <!-- Unique Navigation System -->
+			 <div class="flex space-x-4 mt-4">
+                <div class="navigation-orb p-6 rounded-full">
+                    <a href="pages/map-generator.html" class="navigation-link flex flex-col items-center">
+                        <img src="./assets/icons/mapIcon.png" alt="Map Generator" class="h-20 w-16 mb-2">
+                        <span class="link-text text-white text-sm">Map Generator</span>
+                    </a>
+                </div>
+                <div class="navigation-orb p-6 rounded-full">
+                    <a href="pages/combat-tracker.html" class="navigation-link flex flex-col items-center">
+                        <img src="./assets/icons/combatIcon.png" alt="Combat Tracker" class="h-20 w-16 mb-2">
+                        <span class="link-text text-white text-sm">Combat Tracker</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
+
+	 <!-- Story Section -->
+	 <section class="container mx-auto py-16 px-4">
+        <h2 class="text-4xl font-bold mb-6 text-center">The Lore of the Land</h2>
+        <p class="text-lg mb-6">Discover the mysteries and legends that envelop the realm. Each corner of this world is filled with tales of heroism, treachery, magic, and monsters.</p>
+        <!-- Add more content or sections as needed -->
+    </section>
+
 
     <!-- Footer -->
     <footer class="bg-gray-900 p-4">
